@@ -27,20 +27,31 @@ if(isset($_POST['login'])){
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<title>Přihlášení</title>
-<link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlášení</title>
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
-<form method="POST">
-    <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <input type="text" name="identifier" placeholder="Email nebo Username" required>
-    <input type="password" name="password" placeholder="Heslo" required>
-    <button type="submit" name="login">Přihlásit se</button>
-</form>
-<a href="register.php">Registrovat se</a>
+<main>
+    <div class="form">
+        <h2>Přihlášení</h2>
+        <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
+        <form method="POST">
+            <label for="identifier">Email nebo Username</label>
+            <input type="text" id="identifier" name="identifier" placeholder="Email nebo Username" required>
+
+            <label for="password">Heslo</label>
+            <input type="password" id="password" name="password" placeholder="Heslo" required>
+
+            <button type="submit" name="login">Přihlásit se</button>
+        </form>
+        <p>Ještě nemáte účet? <a href="register.php">Registrovat se</a></p>
+    </div>
+</main>
 </body>
 </html>

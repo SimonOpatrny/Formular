@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Pokud je uživatel už přihlášen, přesměruj ho na dashboard
 if(isset($_SESSION['user_id'])){
     header("Location: dashboard.php");
     exit;
@@ -25,7 +24,6 @@ if(isset($_SESSION['user_id'])){
                     <h2>Create an account</h2>
                 </div>
 
-                <!-- FORMULÁŘ REGISTRACE -->
                 <form method="POST" action="register.php">
                     <div class="form-main">
                         <div class="form-main-inputs">
